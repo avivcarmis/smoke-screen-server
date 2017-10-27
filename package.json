@@ -1,0 +1,50 @@
+{
+  "name": "smoke-screen-server",
+  "version": "1.0.0",
+  "description": "Strongly typed JavaScript server based on express",
+  "engines": {
+    "node": ">=6.11.2"
+  },
+  "main": "dist/src/main.js",
+  "types": "dist/src/main.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "compile": "tsc -p .",
+    "clean-compile": "npm run clean && npm run compile",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' && tslint -c tslint.json 'test/**/*.ts'",
+    "test": "mocha dist/test",
+    "build-pipeline": "npm run clean-compile && npm run lint && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avivcarmis/smoke-screen-server.git"
+  },
+  "keywords": [
+    "TODO"
+  ],
+  "author": "Aviv Carmi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avivcarmis/smoke-screen-server/issues"
+  },
+  "homepage": "https://github.com/avivcarmis/smoke-screen-server#readme",
+  "devDependencies": {
+    "@types/body-parser": "^1.16.7",
+    "@types/chai": "^4.0.4",
+    "@types/express": "^4.0.39",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.28",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
